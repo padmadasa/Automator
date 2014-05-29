@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<test users="1" resetCookies="true">
+	<name>TestGoogle</name>
+	<testConfig>
+		<enableIE>
+			false
+		</enableIE>		
+		<enableFireFox>
+			true
+		</enableFireFox>
+		<enableChrome>
+			false
+		</enableChrome>		
+		<chromePath>/Users/priya/personals/2014/selenium-Priya/chromedriver</chromePath>
+		<testResultPath>/Users/priya/personals/2014/selenium-Priya/</testResultPath>
+		<env>Production</env>
+		<build>SampleBuild</build>
+		<project>SampleProject</project>
+	</testConfig>
+	<flows>
+		<flow name="StaplesAdvantage_Flow">
+			<steps>
+				<step name="Google Home Page" enableTimer="false">
+					<waitFor>2000</waitFor>
+					<url>
+						https://www.google.com/
+					</url>
+				</step>
+				<step name="Enter Search Term" enableTimer="false">
+					<waitFor>1000</waitFor>
+					<enterText>
+						<locateUsing>
+							<id>gbqfq</id>
+						</locateUsing>
+					</enterText>
+				</step>				
+				<step name="submit" enableTimer="false">
+					<waitFor>1000</waitFor>					
+					<submitAction>
+						<text>10063345BOS</text>
+						<locateUsing>
+							<xPath path="//*[@id='gbqfb']"/>
+						</locateUsing>
+					</submitAction>
+				</step>
+			</steps>
+		</flow>
+	</flows>
+</test>
